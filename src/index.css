@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Nastaliq+Urdu:wght@400..700&family=Sono:wght@200..800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #76C043;
+  --color-secondary: #F1801F;
+  --color-text: #6E7673;
+  --color-accent: #0E341D;
+  --typography-secondary-font-weight: 400;
+  --typography-text-font-weight: 400;
+  --color-border: #FFFFFF40;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 transition-colors duration-200;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+  &:hover {
+    @apply  hover:bg-gray-400;
+  }
+}
+
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: var(--typography-text-font-weight);
+  
+    color-scheme: light dark;
+    background-color: #F9F9F9;
+    color: var(--color-text);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    scroll-behavior: smooth;
+    
+    * {
+      ::-webkit-scrollbar {
+        @apply w-2 transition-colors duration-200;
+      }
+      
+      ::-webkit-scrollbar-track {
+        @apply bg-gray-100 rounded-full;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full;
+        &:hover {
+          @apply  hover:bg-gray-400;
+        }
+      }
+    }
+
+  }
+
+  img {
+    @apply max-w-full max-h-full;
+  }
+  
+  a {
+    font-size: small;
+    text-decoration: inherit;
+    @apply transition-colors duration-200 hover:text-secondary;
+  }
+
+  iframe[id=':2.container'] {
+    display: none;
+    appearance: none;
+    visibility: hidden;
+  }
+  .skiptranslate {
+    display: none;
+    height: 0;
+    visibility: hidden;
+  }
+  
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh !important;
+    top: 0 !important;
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  button {
+    @apply cursor-pointer transition-colors duration-200 py-2 px-4 rounded-full bg-secondary text-white font-medium hover:bg-secondary/30;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+
+  .bg-linear-60 {
+    background-image: linear-gradient(60deg, var(--tw-gradient-stops));
+  }
+
+  .nav, header {
+    @apply z-50;
+    li {
+      cursor: pointer;
+    }
+    nav > ul {
+      > li.active {
+        @apply opacity-100;
+        span svg {
+          clip-path: inset(0);
+        }
+      }
+
+      > li {
+        transition: all .3s;
+        margin-inline: 1rem;
+      }
+
+      
+
+        &:hover > li:not(:hover) {
+          opacity: 70%;
+        }
+
+
+        > li.listed {
+          @apply relative;
+          > .list {
+            @apply absolute p-4 w-fit h-fit text-nowrap text-start -bottom-36 flex flex-col gap-2 left-0 bg-white text-black font-light transition-all duration-300 delay-300;
+            clip-path: inset(0 100% 0 0);
+
+            &:hover {
+              clip-path: inset(-100%) !important;
+            }
+            
+            > li {
+              position: relative;
+              &.fruits-listed {
+                position: relative;
+                &:hover
+                {
+                  ul.fruits-list {
+                    clip-path: inset(0);
+                  }
+                }
+
+                ul.fruits-list {
+                  @apply absolute p-4 w-fit h-fit max-h-60 overflow-y-auto text-nowrap text-start -bottom-36 flex flex-col gap-2 left-full bg-white text-black font-light transition-all duration-300 delay-300 snap-mandatory snap-center rounded-md overflow-x-hidden;
+                  clip-path: inset(0 100% 0 0);
+                  left: 120%;
+                  top: 0;
+                }
+              }
+            }
+            
+            
+          }
+
+            &:hover .list {
+              @apply p-4 rounded-md w-fit text-nowrap text-start;
+              clip-path: inset(0);
+            }
+          }
+
+        &:hover li:hover {
+          opacity: 100%;
+          span svg {
+            clip-path: inset(0);
+          }
+        }
+
+        li:not(.active) {
+        @apply opacity-70 transition-all duration-300 hover:opacity-100;
+        span svg {
+          transition: all .3s;
+          clip-path: inset(100% 0 0 0);
+          }
+
+
+        }
+      }
+    }
+
+  .text-color-animation {
+    animation: textColorAnimation 8s linear infinite;
+    background-clip: text;
+    background-image: url(https://oginafoods.com/wp-content/uploads/2024/08/bg-clip-text3.webp);
+    color: transparent;
+    font-size: min(5vw, 5rem);
+    @apply text-center;
+  }
+
+  .animate-round {
+    &:hover > span {
+      animation: round .6s 1 alternate;
+    }
+  }
+
+  .link {
+    @apply  transition-colors duration-200 rounded-full text-white px-4 py-2 text-sm font-medium flex gap-1 items-center justify-center;
+  }
+  
+  .animate-bg::before {
+    animation: zoom 20s alternate infinite;
+    backdrop-filter: brightness(50%);
+    background-blend-mode:darken;
+  }
+
+  .animate-arrow:hover .arrow {
+    animation: bounce-arrow .4s 1 linear alternate;
+  }
+
+  .animate-flow {
+    animation: flow 1s linear infinite alternate;
+  }
+}
+
+@layer components {
+  .rounded-btn {
+    @apply rounded-full w-10 h-10 text-white bg-accent flex text-center text-sm justify-center items-center p-2 cursor-pointer hover:bg-secondary transition-colors duration-300;
+    img {
+      @apply w-min h-min;
+    }
+    svg {
+      transition: colors .2s;
+    }
+  }
+
+  .custom-translate {
+    @apply fixed bottom-0 left-0 w-full bg-white/70 backdrop-blur-md z-50 flex items-center justify-center text-sm text-gray-600;
+  }
+
+  .separator {
+    background-image: repeating-linear-gradient(90deg, var(--color-border), var(--color-border) 7px, transparent 7px, transparent 11px);
+  }
+
+  .family-farmhouse {
+    font-family: "Sono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-variation-settings:
+      "MONO" 1;
+  }
+}
+
+@keyframes textColorAnimation {
+  0% {
+    background-size: 300% 300%;
+    background-position: center 0%;
+  }
+  100% {
+    background-size: 300% 300%;
+    background-position: center 100%;
+  }
+  
+}
+
+@keyframes round {
+  25% {
+    opacity: 0;
+    transform: translateY(-5vh);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    background-size: 120% 120%;
+  }
+  100% {
+    background-size: 150% 150%;
+  }
+}
+
+@keyframes bounce-arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15px);
+    opacity: .2;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  
+}
+
+@keyframes flow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
