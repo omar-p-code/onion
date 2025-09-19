@@ -10,10 +10,9 @@ import SidePannel  from '../assets/side-pannel.svg?react';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, scale} from "framer-motion";
-import { Nav, Sweper } from "../components";
+import { Nav, Sweper, Button } from "../components";
 import LeftArrow from "../assets/leftArrow.svg?react";
 import RightArrow from "../assets/rightArrow.svg?react";
-import Button from "../components";
 // import { article } from "framer-motion/client";
 
 
