@@ -13,7 +13,7 @@ import { motion, AnimatePresence, scale} from "framer-motion";
 import { Nav, Sweper } from "../components";
 import LeftArrow from "../assets/leftArrow.svg?react";
 import RightArrow from "../assets/rightArrow.svg?react";
-import Button from "../components/button";
+import Button from "../components";
 // import { article } from "framer-motion/client";
 
 
