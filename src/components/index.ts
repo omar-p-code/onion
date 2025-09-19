@@ -5,7 +5,7 @@ const Header = lazy(() => import('./Header'));
 const Sweper = lazy(() => import('./Sweper'));
 const ToTopBtn = lazy(() => import('./ToTopBtn'));
 const Nav = lazy(() => import('./Nav'));
-const Button = lazy(() => import('./button'));
+const Button = lazy(() => import('./Button'));
 
 export {
    Map,
