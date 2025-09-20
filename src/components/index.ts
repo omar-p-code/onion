@@ -6,6 +6,7 @@ const Sweper = lazy(() => import('./Sweper'));
 const ToTopBtn = lazy(() => import('./ToTopBtn'));
 const Nav = lazy(() => import('./Nav'));
 const Button = lazy(() => import('./Button'));
+const Hero = lazy(() => import('./Hero'));
 
 export {
    Map,
@@ -13,5 +14,6 @@ export {
    Sweper,
    ToTopBtn,
    Nav,
-   Button
+   Button,
+   Hero
 }
