@@ -56,13 +56,21 @@ export default function Hero() {
             viewport={{once: false, amount: 0.2}}
             className={`content w-11/12 flex flex-col justify-start items-center text-center gap-6 px-4 pt-7 overflow-hidden relative rounded-4xl my-5 z-20`}>
                      
-                     <img
+                     <motion.img
+                        initial={{opacity: 0, scale: 1.2}}
+                        animate={{opacity: 1, scale: 1}}
+                        transition={{duration: 0.6, ease: "easeOut", delay: 0.3}}
+                        exit={{opacity: 0, scale: 1.2}}
                         src={"/hero-bg2.webp"}
                         loading='lazy'
                         alt="hero background"
                         className={`absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300 ${bg&&'hidden'}`}
                      />
-                     <img
+                     <motion.img
+                        initial={{opacity: 0, scale: 1.2}}
+                        animate={{opacity: 1, scale: 1}}
+                        transition={{duration: 0.6, ease: "easeOut", delay: 0.3}}
+                        exit={{opacity: 0, scale: 1.2}}
                      loading='lazy'
                      src={"/hero-bg3.webp"}
                      alt="hero background"
