@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { motion } from 'framer-motion'
-import { useScrollDirection } from '../hooks/useScrollDir'
+import { useWindow } from '../hooks/useWindow'
 
 export default function ToTopBtn() {
-      const {pos} = useScrollDirection();
+      const {pos} = useWindow();
       const show = pos > 100;
       return (
             show &&

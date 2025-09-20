@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
-const Hero = lazy(() => import('./Hero'))
+const Home = lazy(() => import('./Home'))
 
 export {
-   Hero
+   Home
 }

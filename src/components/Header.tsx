@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useScrollDirection } from '../hooks/useScrollDir';
+import { useWindow } from '../hooks/useWindow';
 import Search  from '../assets/search.svg?react';
 import SidePannel  from '../assets/side-pannel.svg?react';
 import { useEffect, useState } from 'react';
 import Nav from './Nav';
 
 export default function Header() {
-   const { dir, pos } = useScrollDirection();
+   const { dir, pos } = useWindow();
    const show = dir === "up" && pos > 100;
    const [ windowSize, setWindowSize ] = useState(window.innerWidth);
    useEffect(() => {
