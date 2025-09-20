@@ -171,7 +171,7 @@ export default function Hero() {
                   animate={{clipPath: 'inset(0 0 0 0)'}}
                   transition={{duration: 0.6, ease: "easeOut", delay: 0.1}}
                   exit={{clipPath: 'inset(0 100% 0 0)'}}
-                  src="/divider.webp" alt="" className="w-[max(20vw,_80px)] wy-5"
+                  src="/divider.webp" alt="" className="w-[max(20vw,_180px)] wy-5"
                   
                   ></motion.img>
                   <motion.p
