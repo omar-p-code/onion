@@ -42,7 +42,7 @@ export default function Hero() {
       key='intro-section'
       className={`hero h-fit w-dvw max-w-dvw relative flex flex-col justify-center text-white items-center`}>
          <div className={`intro-bg1 absolute top-0 buttom-0 left-0 right-0 -z-0 transition-[transform] duration-[2s] w-dvw h-fit`} style={{transform: `translateY(${bgY.get()}px)`}}>
-            <img src="/hero-bg1.webp" alt="" className="bg-cover h-dvh z-0 bg-center bg-no-repeat"/>
+            <img src="/hero-bg1.webp" loading='lazy' alt="" className="bg-cover h-dvh z-0 bg-center bg-no-repeat"/>
          </div>
             <div className="end bg-white h-[30%] w-full absolute bottom-0 left-0"></div>
          <AnimatePresence>
@@ -56,20 +56,23 @@ export default function Hero() {
             viewport={{once: false, amount: 0.2}}
             className={`content w-11/12 flex flex-col justify-start items-center text-center gap-6 px-4 pt-7 overflow-hidden relative rounded-4xl my-5 z-20`}>
                      
-                     {bg ? <img
+                     <img
                         src={"/hero-bg2.webp"}
+                        loading='lazy'
                         alt="hero background"
-                        className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300"
-                     />:<img
+                        className={`absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300 ${bg&&'hidden'}`}
+                     />
+                     <img
+                     loading='lazy'
                      src={"/hero-bg3.webp"}
                      alt="hero background"
-                     className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300"
-                     /> }
-                  <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 right-1/12 animate-flow'/>
-                  <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 left-1/12 animate-flow'/>
+                     className={`absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300 ${!bg && 'hidden'}`}
+                     />
+                  <img loading='lazy' src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 right-1/12 animate-flow'/>
+                  <img loading='lazy' src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 left-1/12 animate-flow'/>
                <div className="grass p-0 absolute bottom-0 left-0 mask-bottom">
                   
-                  <img src="/grass.webp" alt="" className=' hue-rotate-45 h-[15px] brightness-200'/>
+                  <img loading='lazy' src="/grass.webp" alt="" className=' hue-rotate-45 h-[15px] brightness-200'/>
                </div>
             <motion.header
             key='header'
@@ -97,7 +100,7 @@ export default function Hero() {
                   </div>)}
                   {windowSize >= 1150 && (<>
                      <div className="icon">
-                        <img src="/logo_white.webp" className="max-w-6/6" />
+                        <img loading='lazy' src="/logo_white.webp" className="max-w-6/6" />
                      </div>
                      <div className="links flex">
                         <div className="link">
@@ -138,7 +141,7 @@ export default function Hero() {
                      <>
                         {windowSize < 1150 &&
                            <div className="icon w-[max(250px,40%)] max-h-full h-full">
-                           <img src="/logo_white.webp" className="max-w-6/6"/>
+                           <img loading='lazy' src="/logo_white.webp" className="max-w-6/6"/>
                            </div>
                         }
                         {windowSize >1150 && 
