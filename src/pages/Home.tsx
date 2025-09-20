@@ -1,4 +1,4 @@
-import Hero from "../components";
+import { Hero } from "../components";
 // import { article } from "framer-motion/client";
 
 
