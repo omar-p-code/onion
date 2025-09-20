@@ -234,6 +234,23 @@
       animation: surp .4s linear 1 alternate;
     }
   }
+
+  .grass {
+      height: 15px;
+      width: 100%;
+  
+      background-image: url('/grass.webp');
+      background-size: cover;
+      background-position: center;
+  
+      mask-image: url('/grass.webp');
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+
+      background-color: white;
+    
+  }
 }
 
 @layer components {
@@ -298,7 +315,7 @@
     scale: 100%;
   }
   100% {
-    scale: 120%;
+    scale: 140%;
   }
 }
 

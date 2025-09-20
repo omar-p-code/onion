@@ -68,12 +68,9 @@ export default function Hero() {
                      alt="hero background"
                      className={`absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300 ${!bg && 'opacity-0 scale-120'}`}
                      />
-                  <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 right-1/12 animate-flow'/>
-                  <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 left-1/12 animate-flow'/>
-               <div className="grass p-0 absolute bottom-0 left-0 mask-bottom">
-                  
-                  <img src="/grass.webp" alt="" className=' hue-rotate-45 h-[15px] brightness-200'/>
-               </div>
+                  <img loading='lazy' src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 right-1/12 animate-flow'/>
+                  <img loading='lazy' src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 left-1/12 animate-flow'/>
+                  <div className='grass p-0 absolute bottom-0 left-0 hue-rotate-180 h-[25px] brightness-200 drop-shadow-2xl bg-white mask-bottom drop-shadow-white'></div>
             <motion.header
             key='header'
             initial={{opacity: 0, x: 50}}
@@ -160,7 +157,7 @@ export default function Hero() {
                </div>
                <div className="body"></div>
             </motion.header>
-            <div className="control text-center mb-[20%] relative flex gap-3 w-full justify-center px-5 items-center">
+            <div className="control text-center mb-12 relative flex gap-3 w-full justify-center px-5 items-center">
                <div className="left hover:text-secondary flex justify-start transition-colors duration-300 text-white w-[min(40%_,5rem)] absolute left-5 top-[50%] translate-y-[-50%]">
                <LeftArrow onClick={() => setBg(prev => !prev)} className='text-4xl stroke-0 scale-120 cursor-pointer w-[min(40%_,5rem)] rotate-180 ' />
                </div>
