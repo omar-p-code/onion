@@ -55,11 +55,16 @@ export default function Hero() {
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false, amount: 0.2}}
             className={`content w-11/12 flex flex-col justify-start items-center text-center gap-6 px-4 pt-7 overflow-hidden relative rounded-4xl my-5 z-20`}>
-                     <img
-                        src={bg ? "/hero-bg2.webp" : "/hero-bg3.webp"}
+                     
+                     {bg ? <img
+                        src={"/hero-bg2.webp"}
                         alt="hero background"
                         className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300"
-                     />
+                     />:<img
+                     src={"/hero-bg3.webp"}
+                     alt="hero background"
+                     className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-70 -z-10 animate-bg transition-all duration-300"
+                     /> }
                   <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 right-1/12 animate-flow'/>
                   <img src="/flow-shape.webp" alt="" className=' hue-rotate-180 brightness-200 absolute bottom-0 left-1/12 animate-flow'/>
                <div className="grass p-0 absolute bottom-0 left-0 mask-bottom">
